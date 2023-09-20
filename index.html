@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
@@ -22,73 +22,36 @@
           Вам предстоит пройти несколько увлекательных игр. Если готов нажимай
           <b>поехали</b> и <b>приступай</b>
         </p>
-        <a class="button" href="">Поехали!</a>
+        <a class="button" href="#gameCenter">Поехали!</a>
       </div>
     </section>
-    <div class="menu-game center">
-      <a href="#game" class="menu-game__item menu-game__item_1">Игра 1</a>
-      <a href="#" class="menu-game__item menu-game__item_2">Игра 2</a>
-      <a href="#" class="menu-game__item menu-game__item_3">Игра 3</a>
+    <div class="menu-game center" id="gameCenter">
+      <a href="#game1" class="menu-game__item menu-game__item_1"> Игра 1 </a>
+      <a href="#game2" class="menu-game__item menu-game__item_2"> Игра 2 </a>
+      <a href="#" class="menu-game__item menu-game__item_3"> Игра 3</a>
     </div>
-   <section id="game" class="game center">
-   <div class="game__content">
-    <h2 class="game__heading">Времена года!</h2>
-    <p class="game__text">Нажмите кнопку играть, введите номер месяца (от 1 до 12) и вы узнаете к какому времени года он относится</p>
-    <a onclick="game()" href="#" class="button">Играть!</a>
-    </div>
-    <img src="img/game.svg" alt="game">
-  </section>
-  <section id="game2" class="game game_2 center">
-    <img src="img/game2.svg" alt="game2">
-    <div class="game__content">
-     <h2 class="game__heading">Запомни слова!</h2>
-     <p class="game__text">При нажатии на кнопку играть, вы увидите несколько слов, которые вам необходимо запомнить.</p>
-     <a onclick="game2()" href="#" class="button">Играть!</a>
-     </div>
-   </section>
-  <script>
-    function game() {
-      let numberMonth = Number(prompt('Введите номер месяца'));
-      function seasons(num) {
-        if (num <= 0 || num >=13 ) {
-          alert('Вы ввели неверное число');
-          
-        } else if (num === 1 || num === 2 || num === 12) {
-          alert('Зима');
-          
-        } else if (num >=3 && num <=5 ) {
-          
-          alert('Весна');
-        } else if (num >=6 && num <=8 ) {
-          
-          alert('Лето');
-        } else { 
-          alert('Осень');
-          
-        }
-      }
-      seasons(numberMonth);
-    }
-  </script>
-  <script>
-    function game2() {
-    let arr = ['Яблоко', 'Груша', 'Дыня', 'Виноград', 'Персик', 'Апельсин', 'Мандарин'];
-    arr = arr.sort(() => Math.random() - 0.5);
-    alert(arr);
-     
-    let firstElem = prompt('Первый элемент массива');
-    let lastElem = prompt('Последний элемент массива');
-    
-    if (firstElem === arr[0] && lastElem === arr[arr.length - 1]) {
-        alert('Поздравляю');
-      }  else if (firstElem === arr[0] || lastElem === arr[arr.length - 1]) {
-    alert('Вы были близки к победе');
-      } else {
-        alert('Не угадал');
-    
-      }
-    }
-  </script>
+    <section id="game1" class="game center">
+      <div class="game__content">
+        <h2 class="game__heading">Времена года!</h2>
+        <p class="game__text">
+          Нажмите кнопку играть, введите номер месяца (от 1 до 12) и вы узнаете
+          к какому времени года он относится
+        </p>
+        <a id="gameStart1" href="#gameStart1" class="button">Играть!</a>
+      </div>
+      <img src="img/game.svg" alt="game" />
+    </section>
+    <section id="game2" class="game game_2 center">
+      <img src="img/game2.svg" alt="game2" />
+      <div class="game__content">
+        <h2 class="game__heading">Запомни слова!</h2>
+        <p class="game__text">
+          При нажатии на кнопку играть, вы увидите несколько слов, которые вам
+          необходимо запомнить.
+        </p>
+        <a id="gameStart2" class="button">Играть!</a>
+      </div>
+    </section>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
